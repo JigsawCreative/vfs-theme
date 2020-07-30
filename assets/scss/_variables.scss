@@ -1,0 +1,141 @@
+/** Colours **/
+$white: #fff;
+$black: #252525;
+$grey: #777;
+$dark-grey: #31393f;
+$light-grey: #adadad;
+$blue: #2f4085;
+$dark-blue: #001c38;
+$red: #e52a31;
+
+//Mixins
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin boxedContent {
+  max-width: 1140px;
+  margin: auto;
+}
+
+@mixin objectFit {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+@mixin greyUnderDash {
+  width: 70px;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: $light-grey;
+  content: "";
+  position: absolute;
+}
+
+@mixin mobileSpacing {
+  @include all-mobile-devices {
+    padding: 2rem;
+  }
+}
+
+@mixin not-last-child($selector) {
+  & #{$selector}:not(:last-child) {
+    @content;
+  }
+}
+
+@mixin sectionPad {
+  padding: 5rem 1rem;
+}
+
+//Global screen size mixins
+
+@mixin for-phone-only {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-only {
+  @media (min-width: 600px) and (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin all-mobile-devices {
+  @media (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin for-desktop-up {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+
+/** Box shadow **/
+$shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+$small-shadow: 0 6px 25px 0 rgba(0, 0, 0, 0.1);
+
+/** Typography **/
+$font-family: Raleway, Arial, sans-serif;
+$sub-font: "Open Sans", Arial, sans-serif;
+
+@font-face {
+  font-family: Raleway;
+  src: url(../../../assets/fonts/Poppins-Regular.ttf);
+}
+
+/** Top offset (for position fixed menu) **/
+$mobile-offset: 70px;
+$desktop-offset: 169px;
+
+/** Global opacities **/
+$hover: 0.7;
+
+/** Buttons **/
+.red-btn {
+  color: #fff;
+  background-color: #e52a31;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.white-btn {
+  color: #e52a31;
+  background-color: #fff;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+}

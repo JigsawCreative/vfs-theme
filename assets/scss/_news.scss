@@ -1,0 +1,126 @@
+.__news {
+  .blog-posts {
+    .blog-wrapper {
+      display: grid;
+
+      @include boxedContent;
+      @include for-desktop-up {
+        grid-template-columns: 4fr 1fr;
+      }
+      @include all-mobile-devices {
+        grid-template-columns: 1fr;
+      }
+      .blog-tile-layout {
+        padding: 1rem;
+
+        .blog-item {
+          display: grid;
+          margin: 3rem 0;
+          @include for-tablet-portrait-up {
+            grid-template-columns: 100px -webkit-max-content minmax(350px, 450px);
+            grid-template-columns: 100px max-content minmax(350px, 450px);
+          }
+
+          @include for-phone-only {
+            grid-template-columns: 1fr;
+          }
+
+          .blog-meta {
+            @include for-tablet-portrait-up {
+              @include flexColumn;
+            }
+            @include for-phone-only {
+              display: flex;
+              justify-content: space-around;
+            }
+            padding: 0.5rem;
+
+            .blog-author {
+              @include flexColumn;
+
+              img {
+                border-radius: 50%;
+              }
+            }
+            .blog-date {
+              text-transform: uppercase;
+              @include flexColumn;
+
+              .blog-day {
+                font-size: 2.25rem;
+                font-weight: bold;
+                // color: $gold;
+              }
+
+              .blog-month {
+                font-size: 0.8rem;
+                // color: $off-black;
+              }
+            }
+          }
+
+          .blog-image {
+            @include for-tablet-portrait-up {
+              img {
+                max-width: 300px;
+                height: auto;
+              }
+            }
+          }
+
+          .blog-titles {
+            @include for-tablet-portrait-up {
+              padding-left: 1rem;
+            }
+
+            .permalink {
+              text-decoration: none;
+
+              h4 {
+                @include for-tablet-portrait-up {
+                  padding: 0.5rem 0;
+                }
+                @include for-phone-only {
+                  padding: 0.5rem 0.5rem 0.5rem 0;
+                }
+              }
+            }
+
+            .blog-categories {
+              a {
+                text-decoration: none;
+                font-size: 0.8rem;
+                color: $grey;
+              }
+
+              ul {
+                list-style: none;
+                text-decoration: none;
+                display: flex;
+                flex-wrap: wrap;
+
+                li {
+                  margin: 5px;
+                }
+              }
+            }
+            .blog-excerpt {
+              padding: 0.5rem 0.5rem 0.5rem 0;
+            }
+          }
+
+          .blog-item-thumbnail {
+            @include for-tablet-portrait-up {
+              width: 19rem;
+              height: 21rem;
+            }
+
+            img {
+              @include objectFit;
+            }
+          }
+        }
+      }
+    }
+  }
+}

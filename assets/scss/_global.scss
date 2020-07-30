@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family;
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+//main content div top spacing
+#content {
+  padding-top: $desktop-offset;
+}
+
+hr {
+  border-top: 1px solid $light-grey !important;
+  border: 0px;
+  width: 50px;
+}
+
+p {
+  color: $black;
+}
+
+.btn {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  border-radius: 3px;
+  padding: 0.5rem 0.75rem;
+}
+
+//More link styling
+.more-link {
+  color: $grey;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  &::after {
+    border-style: solid;
+    border-width: 0.2em 0.2em 0 0;
+    content: "";
+    height: 0.4em;
+    left: 0.15em;
+    position: relative;
+    top: 0.15em;
+    width: 0.4em;
+    transform: rotate(45deg);
+    margin-left: 5px;
+  }
+}
+
+html {
+  font-size: 16px;
+  //OUTER GRID
+  body {
+    font-family: $font-family;
+    #wrapper {
+      @include for-desktop-up {
+        padding-top: $desktop-offset;
+      }
+      //Main GRID
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        // "header"
+        "main"
+        "footer";
+
+      #header {
+        grid-area: header;
+      }
+      .main {
+        grid-area: main;
+      }
+      #footer {
+        grid-area: footer;
+      }
+    }
+    //scroll to top button
+    .scroll-to-top {
+      width: 40px;
+      height: 40px;
+      position: fixed;
+      bottom: 1rem;
+      @include for-desktop-up {
+        right: 7rem;
+      }
+
+      @include all-mobile-devices {
+        right: 3rem;
+      }
+      text-indent: -9999px;
+      background-image: url("/wp-content/uploads/2020/05/to-top.png");
+      background-repeat: no-repeat;
+      background-color: #252525;
+      z-index: 100;
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      transition: all 0.5s ease 0s;
+      -moz-transition: all 0.5s ease 0s;
+      -webkit-transition: all 0.5s ease 0s;
+      -o-transition: all 0.5s ease 0s;
+      display: none;
+      cursor: pointer;
+    }
+  }
+}
+
+/** Visibility **/
+.visible {
+  opacity: 1 !important;
+}
+
+
+/** Buttons **/
+.btn {
+  color: #fff;
+  background-color: #e52a31;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+}

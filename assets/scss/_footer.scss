@@ -1,0 +1,119 @@
+#footer {
+
+  .sweep-wrapper {
+    padding: 70px 0px;
+    background: url('/wp-content/uploads/2020/06/VT_Curves-bottom-scaled.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  // background-color: #353e44;
+  .footer-widgets {
+    @include boxedContent;
+    display: grid;
+    
+
+    @include for-desktop-up {
+      grid-template-columns: repeat(4, 1fr);
+      padding: 1rem 2rem 8rem 2rem;
+    }
+
+    @include for-tablet-only {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include for-phone-only {
+      grid-template-columns: 1fr;
+    }
+
+    @include all-mobile-devices {
+      padding: 1rem 2rem 20rem 2rem;
+    }
+
+    ul {
+      list-style: none;
+      .footer-area {
+        padding: 0px 15px;
+        margin-bottom: 1rem;
+
+        li {
+          padding: 0.5rem 0rem;
+          a {
+            text-decoration: none;
+            color: $blue;
+          }
+
+          p {
+            color: $light-grey;
+            font-size: 0.8rem;
+            font-family: $sub-font;
+            line-height: 22px;
+          }
+
+          h4 {
+            display: none;
+          }
+
+          span {
+            color: $light-grey;
+            font-size: 0.8rem;
+            font-family: $sub-font;
+          }
+        }
+      }
+    }
+    .footer-list-one {
+      //IE11 positioning
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    }
+    .footer-list-two {
+      //IE11 positioning
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    }
+    .footer-list-three {
+      //IE11 positioning
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    }
+    .footer-list-four {
+      //IE11 positioning
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+    }
+  }
+
+  .footer-area-one {
+    p {
+      color: $black;
+    }
+    .footer-details {
+      display: flex;
+      align-items: center;
+      h5 {
+        color: $blue;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .copyright-container {
+    background-color: $blue;
+    #copyright {
+      display: flex;
+      justify-content: space-between;
+      @include boxedContent;
+
+      padding: 1rem;
+      p {
+        color: $light-grey;
+        margin: 10px;
+        font-size: 0.8rem;
+      }
+      @include all-mobile-devices {
+        text-align: center;
+      }
+    }
+  }
+}

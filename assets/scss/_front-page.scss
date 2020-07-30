@@ -1,0 +1,83 @@
+//Home page styling
+.main__front-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+
+  .welcome-slider {
+    position: relative;
+    //IE11 positioning
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    .welcome-slider-container {
+      img {
+        width: 100%;
+        height: auto;
+      }
+      .flex-direction-nav {
+        padding: 1rem;
+      }
+    }
+  }
+  .welcome-text {
+    //IE11 positioning
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    @include sectionPad;
+    .welcome-container {
+      @include boxedContent;
+    }
+  }
+  .services {
+    //IE11 positioning
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    background-color: $blue;
+    color: $white;
+    @include sectionPad;
+    .services-container {
+      @include boxedContent;
+
+      h3 {
+        text-align: center;
+      }
+
+      .services-slides {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        @include all-mobile-devices {
+          flex-direction: column;
+        }
+        img {
+          flex-shrink: 0;
+          max-width: 50%;
+        }
+      }
+      .slide {
+        padding: 2rem;
+        margin: 1rem;
+        background-color: $dark-blue;
+        @include flexColumn;
+        justify-content: space-around;
+        @include for-desktop-up {
+          
+        }
+
+        .more-info {
+          color: $white;
+          background-color: $red;
+          text-decoration: none;
+          padding: 1rem 2rem;
+          border-radius: 0.5rem;
+        }
+        .service-body {
+          width: 100%;
+          p {
+            padding: 1rem 0.5rem;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

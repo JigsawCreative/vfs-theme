@@ -1,0 +1,12 @@
+.contact-numbers {
+    //IE11 positioning
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    @include sectionPad;
+    .contact-numbers-container {
+      a {
+        color: $red;
+        text-decoration: none;
+      }
+    }
+  }

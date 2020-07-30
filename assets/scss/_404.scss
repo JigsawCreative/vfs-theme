@@ -1,0 +1,44 @@
+.__main-404 {
+  .page-404 {
+    @include for-tablet-portrait-up {
+      padding: 10rem 1rem;
+    }
+
+    .page-404-container {
+      display: flex;
+      @include for-tablet-portrait-up {
+        align-items: center;
+      }
+      @include for-phone-only {
+        flex-direction: column;
+      }
+      @include boxedContent;
+
+      .page-404-image {
+        @include for-phone-only {
+          @include flexCenter;
+        }
+        img {
+          max-width: 250px;
+          padding: 2rem;
+        }
+      }
+      .page404-text {
+        padding: 2rem;
+        h2 {
+          padding: 1rem 0;
+        }
+        .heading-top {
+          font-weight: bold;
+        }
+
+        .home-link {
+          a {
+            text-decoration: none;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

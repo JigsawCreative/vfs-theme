@@ -1,0 +1,46 @@
+.testimonials {
+  //IE11 positioning
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  background-color: $red;
+  @include sectionPad;
+
+  .testimonials-container {
+    @include boxedContent;
+    position: relative;
+
+    .slides {
+      list-style: none;
+      .slide-container {
+        display: flex;
+        justify-content: center;
+        color: $white;
+        @include all-mobile-devices {
+          flex-direction: column;
+          align-items: center;
+        }
+        img {
+          padding: 1rem;
+          @include all-mobile-devices {
+            max-width: 75%;
+          }
+        }
+
+        .testimonial-content {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 1rem;
+          p {
+            color: $white;
+            font-size: 0.8rem;
+          }
+          .testimonial-name {
+            font-style: italic;
+          }
+        }
+      }
+    }
+  }
+}

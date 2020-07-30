@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": "ACoDA,AAAA,cAAc,CAAC;EACb,SAAS,EAAE,MAAM;CAClB;;AAED,eAAe;AAIf,kBAAkB;AAKlB,kBAAkB;AAGlB,4CAA4C;AAG5C,wBAAwB;AGvExB,AAAA,OAAO,CAAC;EHEN,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;CGapB;;AAjBD,AAEE,OAFK,CAEL,KAAK,CAAC;EACJ,OAAO,EAAE,IAAI;CAad;;AAhBH,AAKI,OALG,CAEL,KAAK,CAGH,cAAc,CAAC;EACb,OAAO,EAAE,IAAI;CASd;;AAfL,AAQM,OARC,CAEL,KAAK,CAGH,cAAc,CAGZ,EAAE,CAAC;EACD,OAAO,EAAE,IAAI;CAKd;;AAdP,AAWQ,OAXD,CAEL,KAAK,CAGH,cAAc,CAGZ,EAAE,CAGA,CAAC,CAAC;EACA,KAAK,EAAE,KAAK;CACb",
+    "sources": [
+        "bundle.scss",
+        "variables.scss",
+        "global.scss",
+        "_home.scss",
+        "nav.scss"
+    ],
+    "names": [],
+    "file": "bundle.css"
+}

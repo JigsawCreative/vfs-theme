@@ -1,0 +1,125 @@
+.page-template-contact {
+
+
+
+#wrapper {
+    background: $blue;
+
+    .main__contact {
+        
+        min-height: 100vh;
+        .contact-container {
+            @include for-desktop-up {
+                max-width: 1140px;
+                margin: auto;
+            }
+
+            @include all-mobile-devices {
+                
+            }
+
+            .contact-container-inner {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                padding: 1rem;
+
+                .contact-form, .contact-map {
+                    @include for-tablet-portrait-up {
+                        margin: 0.5rem 2rem;
+                    }
+                    @include for-phone-only {
+                        margin: 0.5rem 1rem;
+                    }
+                }
+
+                .contact-form {
+                    background: $red;
+                    padding: 1rem;
+                    border-radius: 2rem;
+                    -webkit-border-radius: 2rem;
+                    -moz-border-radius: 2rem;
+                    -ms-border-radius: 2rem;
+                    -o-border-radius: 2rem;
+
+                    //IE11 positioning
+                    -ms-grid-row: 1;
+                    -ms-grid-column: 1;
+
+                    h3 {
+                        margin-left: 1rem;
+                        color: $white;
+                    }
+
+                    .form-field {
+                        margin: 1rem;
+                    }
+
+                    .wpcf7 {
+                        width:100% !important;
+                    }
+                }
+
+                .contact-wrapper {
+                    //IE11 positioning
+                    -ms-grid-row: 1;
+                    -ms-grid-column: 2;
+
+                    .contact-map {
+                        iframe {
+                            width: 100%;
+                        }
+                    }
+        
+                    .contact-address {
+                        padding: 2rem;
+                        li {
+                            color: $white;
+                            display: flex;
+                            align-items: center;
+                            img {
+                                max-width: 50px;
+                                height: auto;
+                                padding: 1rem;
+        
+                                &:nth-of-type(1) {
+                                    align-self: flex-start;
+                                }
+                            }
+        
+                            p {
+                            color: inherit;
+                            }
+        
+                            a {
+                                color: inherit;
+                                
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+        input[type="text"], 
+        input[type="email"], 
+        input[type="tel"], 
+        textarea {
+            width: 100%;
+            border: none;
+            padding: 1rem;
+        }
+        input[type="submit"] {
+            color: #fff;
+            background-color: $blue;
+            text-decoration: none;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            border: none;
+            margin: 1rem;
+            cursor: pointer;
+        }
+    }
+}
+
+}
