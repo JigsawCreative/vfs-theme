@@ -60,7 +60,7 @@
         @include flexColumn;
         justify-content: space-around;
         @include for-desktop-up {
-          
+          flex:1;
         }
 
         .more-info {

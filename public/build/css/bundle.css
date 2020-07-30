@@ -328,6 +328,7 @@ html body .scroll-to-top {
       -ms-grid-row-align: center;
       align-self: center;
   z-index: 9999;
+  -ms-overflow-x: hidden;
 }
 
 @media (max-width: 1199px) {
@@ -363,14 +364,48 @@ html body .scroll-to-top {
         -ms-flex-direction: column;
             flex-direction: column;
     background-color: #2f4085;
-    -webkit-clip-path: circle(100px at 90% -30%);
-    clip-path: circle(100px at 90% -30%);
-    -webkit-transition: all 1s ease-out;
-    transition: all 1s ease-out;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
     height: 100vh;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  @supports ((-webkit-clip-path: circle(0px)) or (clip-path: circle(0px))) {
+    #header #menu #menu-links .menu-top-container #menu-top {
+      -webkit-transform: translateX(0%);
+              transform: translateX(0%);
+      -webkit-clip-path: circle(100px at 90% -30%);
+      clip-path: circle(100px at 90% -30%);
+      -webkit-transition: -webkit-clip-path 1s ease-out;
+      transition: -webkit-clip-path 1s ease-out;
+      transition: clip-path 1s ease-out;
+      transition: clip-path 1s ease-out, -webkit-clip-path 1s ease-out;
+    }
+  }
+}
+
+#header #menu #menu-links .menu-top-container #menu-top.open {
+  z-index: 9999;
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+@media (max-width: 599px) {
+  @supports ((-webkit-clip-path: circle(0px)) or (clip-path: circle(0px))) {
+    #header #menu #menu-links .menu-top-container #menu-top.open {
+      -webkit-clip-path: circle(1000px at 90% -30%) !important;
+      clip-path: circle(1000px at 90% -30%) !important;
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1199px) {
+  @supports ((-webkit-clip-path: circle(0px)) or (clip-path: circle(0px))) {
+    #header #menu #menu-links .menu-top-container #menu-top.open {
+      -webkit-clip-path: circle(1500px at 90% -30%) !important;
+      clip-path: circle(1500px at 90% -30%) !important;
+    }
   }
 }
 
@@ -497,24 +532,6 @@ html body .scroll-to-top {
   }
 }
 
-#menu-top.open {
-  z-index: 9999;
-}
-
-@media (max-width: 599px) {
-  #menu-top.open {
-    -webkit-clip-path: circle(1000px at 90% -30%) !important;
-    clip-path: circle(1000px at 90% -30%) !important;
-  }
-}
-
-@media (min-width: 600px) and (max-width: 1199px) {
-  #menu-top.open {
-    -webkit-clip-path: circle(1500px at 90% -30%) !important;
-    clip-path: circle(1500px at 90% -30%) !important;
-  }
-}
-
 .screen-reader-text {
   display: none;
 }
@@ -530,35 +547,41 @@ html body .scroll-to-top {
 #footer .footer-widgets {
   max-width: 1140px;
   margin: auto;
-  display: -ms-grid;
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-@media (min-width: 1200px) {
+@supports (display: grid) {
   #footer .footer-widgets {
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
-    padding: 1rem 2rem 8rem 2rem;
+    display: -ms-grid;
+    display: grid;
   }
-}
-
-@media (min-width: 600px) and (max-width: 1199px) {
-  #footer .footer-widgets {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
+  @media (min-width: 1200px) {
+    #footer .footer-widgets {
+      -ms-grid-columns: (1fr)[4];
+          grid-template-columns: repeat(4, 1fr);
+      padding: 1rem 2rem 8rem 2rem;
+    }
   }
-}
-
-@media (max-width: 599px) {
-  #footer .footer-widgets {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+  @media (min-width: 600px) and (max-width: 1199px) {
+    #footer .footer-widgets {
+      -ms-grid-columns: (1fr)[2];
+          grid-template-columns: repeat(2, 1fr);
+    }
   }
-}
-
-@media (max-width: 1199px) {
-  #footer .footer-widgets {
-    padding: 1rem 2rem 20rem 2rem;
+  @media (max-width: 599px) {
+    #footer .footer-widgets {
+      -ms-grid-columns: 1fr;
+          grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 1199px) {
+    #footer .footer-widgets {
+      padding: 1rem 2rem 20rem 2rem;
+    }
   }
 }
 
@@ -753,6 +776,14 @@ html body .scroll-to-top {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+@media (min-width: 1200px) {
+  .main__front-page .services .services-container .slide {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
 }
 
 .main__front-page .services .services-container .slide .more-info {

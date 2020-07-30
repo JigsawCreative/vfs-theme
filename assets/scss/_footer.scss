@@ -10,25 +10,33 @@
   // background-color: #353e44;
   .footer-widgets {
     @include boxedContent;
-    display: grid;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    @supports(display: grid) {
+
+      display: grid;
+
+      @include for-desktop-up {
+        grid-template-columns: repeat(4, 1fr);
+        padding: 1rem 2rem 8rem 2rem;
+      }
+
+      @include for-tablet-only {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include for-phone-only {
+        grid-template-columns: 1fr;
+      }
+
+      @include all-mobile-devices {
+        padding: 1rem 2rem 20rem 2rem;
+      }
+
+    }
     
-
-    @include for-desktop-up {
-      grid-template-columns: repeat(4, 1fr);
-      padding: 1rem 2rem 8rem 2rem;
-    }
-
-    @include for-tablet-only {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include for-phone-only {
-      grid-template-columns: 1fr;
-    }
-
-    @include all-mobile-devices {
-      padding: 1rem 2rem 20rem 2rem;
-    }
 
     ul {
       list-style: none;
