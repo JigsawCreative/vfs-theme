@@ -3,21 +3,47 @@
 
     <main class="__main-services main">
 
+        <section class="banner__image">
+
+            <div class="banner__image-container">
+
+                <div class="banner__image-wrapper">
+
+                    <?php $banner_image = get_field( 'banner_image' ); ?>
+
+                    <img src="<?=$banner_image['url']; ?>" alt="<?=$banner_image['alt']; ?>" class="banner-image">
+
+                </div>
+
+                <div class="banner__titles-container">
+
+                    <div class="banner__titles">
+
+                        <div class="banner__title-container">
+
+                            <h1 class="title"><?php the_title(); ?></h1>
+
+                        </div>
+
+                        <div class="banner__subtitle-container">
+
+                            <h3 class="banner-subtitle"><?php the_field( 'banner_subtitle' ); ?></h3>
+
+                        </div>
+                        
+                    </div>           
+
+                </div>
+
+            </div>
+
+        </section>
+
         <section class="services">
             
             <div class="services-container">
 
-                <h1 class="title"><?php the_title(); ?></h1>
-
                 <div class="service-icon-and-text">
-                
-                    <div class="service-icon">
-
-                        <?php $service_icon = get_field( 'service_icon' ); ?>
-                    
-                        <img src="<?=$service_icon['url']; ?>" alt="<?=$service_icon['alt']; ?>">
-                    
-                    </div>
 
                     <div class="service-text">
                     
