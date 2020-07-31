@@ -1404,11 +1404,16 @@ html body .scroll-to-top {
 
 .__main-services .banner__image .banner__image-container {
   position: relative;
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .__main-services .banner__image .banner__image-container .banner__image-wrapper {
+  height: inherit;
   background-color: #000;
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 .__main-services .banner__image .banner__image-container .banner__titles-container {
@@ -1433,6 +1438,7 @@ html body .scroll-to-top {
           transform: translateX(-100%);
   -webkit-animation: title-slide-in 1s ease 0s 1 forwards;
           animation: title-slide-in 1s ease 0s 1 forwards;
+  padding: 0.5rem;
 }
 
 .__main-services .banner__image .banner__image-container .banner__titles-container .banner__titles .banner__title-container .title {
@@ -1447,6 +1453,7 @@ html body .scroll-to-top {
           transform: translateX(-100%);
   -webkit-animation: subtitle-slide-in 1s ease 0.2s 1 forwards;
           animation: subtitle-slide-in 1s ease 0.2s 1 forwards;
+  padding: 0.5rem;
 }
 
 .__main-services .banner__image .banner__image-container .banner__titles-container .banner__titles .banner__subtitle-container .banner-subtitle {

@@ -3,10 +3,15 @@
   .banner__image {
     .banner__image-container {
         position: relative;
+        height: 60vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
 
       .banner__image-wrapper {
+        height: inherit;
         background-color: #000;
-        opacity: 0.8;
+        opacity: 0.5;
       }
 
       .banner__titles-container {
@@ -26,6 +31,7 @@
             width: 30%;
             transform: translateX(-100%);
             animation: title-slide-in 1s ease 0s 1 forwards;
+            padding: 0.5rem;
 
             .title {
               padding-left: 1rem;
@@ -38,6 +44,7 @@
             width: 25%;
             transform: translateX(-100%);
             animation: subtitle-slide-in 1s ease 0.2s 1 forwards;
+            padding: 0.5rem;
 
             .banner-subtitle {
               padding-left: 1rem;

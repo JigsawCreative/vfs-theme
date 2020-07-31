@@ -5,15 +5,11 @@
 
         <section class="banner__image">
 
-            <div class="banner__image-container">
+            <?php $banner_image = get_field( 'banner_image' ); ?>
 
-                <div class="banner__image-wrapper">
+            <div class="banner__image-container" style="background: url('<?=$banner_image['url']; ?>') center/cover no-repeat;" alt="<?=$banner_image['alt']; ?>">
 
-                    <?php $banner_image = get_field( 'banner_image' ); ?>
-
-                    <img src="<?=$banner_image['url']; ?>" alt="<?=$banner_image['alt']; ?>" class="banner-image">
-
-                </div>
+                <div class="banner__image-wrapper"></div>
 
                 <div class="banner__titles-container">
 
