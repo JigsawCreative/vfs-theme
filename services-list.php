@@ -4,25 +4,25 @@
 
         <h3>Services</h3>
 
-        <?php if( have_rows('services') ): ?>
+        <?php if( have_rows('global_services', 'option') ): ?>
 
             <ul class="services-slides">
 
-            <?php while( have_rows('services') ): the_row(); 
+            <?php while( have_rows('global_services', 'option') ): the_row(); 
 
-                $icon = get_sub_field('icon');
+                $icon = get_sub_field('services_icon');
 
                 ?>
 
                 <li class="slide">
 
-                        <img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt'] ?>" />
+                        <a href="<?php the_sub_field('service_url'); ?>">
 
-                        <h3 class="service-title"><?php the_sub_field( 'title' ); ?></h3>
+                            <img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt'] ?>" />
 
-                        <div class="service-body"><?php the_sub_field( 'body' ); ?></div>
+                            <h3 class="service-title"><?php the_sub_field( 'services_title' ); ?></h3>
 
-                    <a href="<?php the_sub_field( 'button' ); ?>" class="more-info">Read More</a>
+                        </a>
 
                 </li>
 

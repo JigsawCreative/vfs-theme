@@ -1,0 +1,17 @@
+.services-slides {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    li {
+        flex: 1;
+        padding: 2rem;
+        margin: 1rem;
+        background-color: #001c38;
+        text-align: center;
+
+        a {
+            color: $white;
+            text-decoration: none;
+        }
+    }
+}
