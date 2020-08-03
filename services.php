@@ -17,13 +17,13 @@
 
                         <div class="banner__title-container">
 
-                            <h1 class="title"><?php the_title(); ?></h1>
+                            <h3 class="title"><?php the_title(); ?></h3>
 
                         </div>
 
                         <div class="banner__subtitle-container">
 
-                            <h3 class="banner-subtitle"><?php the_field( 'banner_subtitle' ); ?></h3>
+                            <h4 class="banner-subtitle"><?php the_field( 'banner_subtitle' ); ?></h4>
 
                         </div>
                         
@@ -38,6 +38,8 @@
         <section class="services">
             
             <div class="services-container">
+            
+            <h1 class="title"><?php the_title(); ?></h1>
 
                 <div class="service-icon-and-text">
 
@@ -63,15 +65,21 @@
             
         </section>
 
-        <section class="bullets">
+        <?php $service_bullets = get_field( 'service_bullets' );
 
-            <div class="service-bullets">
+        if($service_bullets) : ?>
 
-                <?php the_field( 'service_bullets' ); ?>
+            <section class="bullets">
 
-            </div>
+                <div class="service-bullets">
 
-        </section>
+                    <?php the_field( 'service_bullets' ); ?>
+
+                </div>
+
+            </section>
+
+        <?php endif; ?>
 
         <!-- Get Services Template -->
         <?php get_template_part('services-list'); ?>

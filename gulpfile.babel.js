@@ -69,7 +69,7 @@ export const scripts = () => {
 const server = browserSync.create();
 export const serve = (done) => {
   server.init({
-    proxy: "https://valefireandsecurity.local/",
+    proxy: "https://vale.local/",
   });
   done();
 };

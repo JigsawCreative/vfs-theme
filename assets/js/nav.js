@@ -2,12 +2,14 @@
 const mobMenu = document.querySelector("#mobile-menu");
 const menuSpan = document.querySelectorAll(".menu-span");
 const menuTop = document.querySelector("#menu-top");
+const menuLinks = document.querySelector(".menu-top-container");
 // const mobLinks = document.querySelector("#menu-about-us");
 mobMenu.addEventListener("click", () => {
   for (let index = 0; index < menuSpan.length; index++) {
     menuSpan[index].classList.toggle("open");
   }
   menuTop.classList.toggle("open");
+  menuLinks.classList.toggle("clickable");
 });
 
 //scroll to top button

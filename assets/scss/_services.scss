@@ -1,12 +1,11 @@
 .__main-services {
-  
   .banner__image {
     .banner__image-container {
-        position: relative;
-        height: 60vh;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+      position: relative;
+      height: 60vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
 
       .banner__image-wrapper {
         height: inherit;
@@ -16,36 +15,55 @@
 
       .banner__titles-container {
         position: absolute;
+        transform: translateY(-50%);
         top: 50%;
         left: 0%;
         width: 100%;
         display: flex;
         flex-direction: column;
-        
-
         .banner__titles {
-
           .banner__title-container {
+            @include for-desktop-up {
+              width: 30%;
+            }
+
+            @include for-tablet-only {
+              width: 50%;
+            }
+
+            @include all-mobile-devices {
+              width: 70%;
+            }
             color: $white;
             background: $red;
-            width: 30%;
             transform: translateX(-100%);
-            animation: title-slide-in 1s ease 0s 1 forwards;
+            -webkit-animation: title-slide-in 1s ease 1s 1 forwards;
+            animation: title-slide-in 1s ease 0.5s 1 forwards;
             padding: 0.5rem;
-
             .title {
               padding-left: 1rem;
             }
           }
 
           .banner__subtitle-container {
+            @include for-desktop-up {
+              width: 25%;
+            }
+
+            @include for-tablet-only {
+              width: 45%;
+            }
+
+            @include all-mobile-devices {
+              width: 65%;
+            }
+            width: 25%;
             color: $red;
             background: $white;
-            width: 25%;
             transform: translateX(-100%);
-            animation: subtitle-slide-in 1s ease 0.2s 1 forwards;
+            -webkit-animation: subtitle-slide-in 1s ease 0.7s 1 forwards;
+            animation: subtitle-slide-in 1s ease 0.7s 1 forwards;
             padding: 0.5rem;
-
             .banner-subtitle {
               padding-left: 1rem;
             }
@@ -98,7 +116,8 @@
         .service-text {
           flex: 2;
           padding: 1rem;
-          ul, p {
+          ul,
+          p {
             color: inherit;
           }
         }
@@ -110,13 +129,13 @@
     background: $red;
     padding: 5rem 2rem;
     color: $white;
-    
+
     .service-bullets {
       @include boxedContent;
       p {
         color: inherit;
       }
-      li{
+      li {
         line-height: 2rem;
       }
     }
@@ -124,34 +143,94 @@
 }
 
 //Keyframes
-@-webkit-keyframes title-slide-in {
-  
-  0% { 
-    transform: translateX(-100%); 
-  }
-  
-  90% {
-    width: 31%; 
+@include for-desktop-up {
+  @-webkit-keyframes title-slide-in {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(0%);
+      width: 30%;
+    }
   }
 
-  100% { 
-    transform: translateX(0%); 
-    width: 30%;
+  @-webkit-keyframes subtitle-slide-in {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    90% {
+      width: 26%;
+    }
+
+    100% {
+      transform: translateX(0%);
+      width: 25%;
+    }
   }
 }
 
-@-webkit-keyframes subtitle-slide-in {
-  
-  0% { 
-    transform: translateX(-100%); 
-  }
-  
-  90% {
-    width: 26%; 
+@include for-tablet-only {
+  @-webkit-keyframes title-slide-in {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    90% {
+      width: 51%;
+    }
+
+    100% {
+      transform: translateX(0%);
+      width: 50%;
+    }
   }
 
-  100% { 
-    transform: translateX(0%); 
-    width: 25%;
+  @-webkit-keyframes subtitle-slide-in {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    90% {
+      width: 46%;
+    }
+
+    100% {
+      transform: translateX(0%);
+      width: 45%;
+    }
+  }
+}
+
+@include for-phone-only {
+  @-webkit-keyframes title-slide-in {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    90% {
+      width: 71%;
+    }
+
+    100% {
+      transform: translateX(0%);
+      width: 70%;
+    }
+  }
+
+  @-webkit-keyframes subtitle-slide-in {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    90% {
+      width: 66%;
+    }
+
+    100% {
+      transform: translateX(0%);
+      width: 65%;
+    }
   }
 }

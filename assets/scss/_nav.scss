@@ -60,11 +60,48 @@
             align-items: center;
             height: 100vh;
             transform: translateX(100%);
-            @supports(clip-path: circle(0px)) {
+            @supports (
+              ((-webkit-clip-path: circle(0px)) or (clip-path: circle(0px)))
+            ) {
               transform: translateX(0%);
               -webkit-clip-path: circle(100px at 90% -30%);
               clip-path: circle(100px at 90% -30%);
+              transition: -webkit-clip-path 1s ease-out;
               transition: clip-path 1s ease-out;
+              transition: clip-path 1s ease-out, -webkit-clip-path 1s ease-out;
+            }
+          }
+
+          //Sub menu styling for desktop
+
+          .menu-item-has-children {
+            text-align: center;
+            @include for-desktop-up {
+              position: relative;
+              &:hover {
+                .sub-menu {
+                  visibility: visible;
+                  pointer-events: all;
+                  transform: translateX(0px);
+                  -webkit-transform: translateX(0px);
+                  -moz-transform: translateX(0px);
+                  -ms-transform: translateX(0px);
+                  -o-transform: translateX(0px);
+                }
+              }
+
+              .sub-menu {
+                position: absolute;
+                visibility: hidden;
+                background: $blue;
+                pointer-events: none;
+                border-top: 2px solid $white;
+                transform: translateX(20px);
+                -webkit-transform: translateX(20px);
+                -moz-transform: translateX(20px);
+                -ms-transform: translateX(20px);
+                -o-transform: translateX(20px);
+              }
             }
           }
         }
@@ -74,20 +111,27 @@
           z-index: 9999;
           transform: translateX(0%);
           @include for-phone-only {
-            @supports(clip-path: circle(0px)) {
+            @supports (
+              ((-webkit-clip-path: circle(0px)) or (clip-path: circle(0px)))
+            ) {
               -webkit-clip-path: circle(1000px at 90% -30%) !important;
               clip-path: circle(1000px at 90% -30%) !important;
             }
-            
           }
           @include for-tablet-only {
-            @supports(clip-path: circle(0px)) {
-            -webkit-clip-path: circle(1500px at 90% -30%) !important;
-            clip-path: circle(1500px at 90% -30%) !important;
+            @supports (
+              ((-webkit-clip-path: circle(0px)) or (clip-path: circle(0px)))
+            ) {
+              -webkit-clip-path: circle(1500px at 90% -30%) !important;
+              clip-path: circle(1500px at 90% -30%) !important;
             }
           }
         }
+      }
 
+      //Class to allow mobile menu items to be clickable
+      .clickable {
+        pointer-events: all !important;
       }
       //Mobile Menu
       #mobile-menu {
